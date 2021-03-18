@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="akara_template_widget_demo.image_demo">
+        <img src="akara_template_widget_demo/static/images/icon.png" class="p-1" width="64" height="64" />
+    </t>
+
+    <t t-name="akara_template_widget_demo.url_demo">
+        <div class="d-flex align-items-center justify-content-center"
+             style="width:100%; height:64px" >
+            <a href="https://apps.odoo.com/apps/themes/14.0/awsome_multi_tab_theme/" >url demo</a>
+        </div>
+    </t>
+
+    <t t-name="akara_template_widget_demo.buttons_demo">
+        <div class="d-flex align-items-center justify-content-center"
+             style="width:100%; height:64px">
+            <button class="btn btn-success" type="object" name="accept_callback">
+                accept
+            </button>
+            <button class="btn btn-info ml-1" type="object" name="reject_callback" >
+                reject
+            </button>
+            <button class="btn btn-info ml-1" type="object" name="change_callback" >
+                change
+            </button>
+        </div>
+    </t>
+
+</templates>

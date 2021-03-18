@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="akara_template_widget_demo.list">
+            <field name="name">akara_template_widget_demo list</field>
+            <field name="model">akara_template_widget_demo.akara_template_widget_demo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="value3"/>
+                    <field name="test_image" context="{'bin_size': False}"/>
+                    <widget name="akara_template_widget"
+                            options="{'template': 'akara_template_widget_demo.url_demo'}"/>
+                    <widget name="akara_template_widget"
+                            options="{'template': 'akara_template_widget_demo.image_demo'}"/>
+                    <widget name="akara_template_widget"
+                            options="{'template': 'akara_template_widget_demo.buttons_demo'}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="akara_template_widget_demo.form">
+            <field name="name">akara_template_widget_demo form</field>
+            <field name="model">akara_template_widget_demo.akara_template_widget_demo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="value3"/>
+                    <field name="test_image" widget="image" context="{'bin_size': False}"/>
+                    <widget name="akara_template_widget"
+                            options="{'template': 'akara_template_widget_demo.image_demo'}"/>
+                    <widget name="akara_template_widget"
+                            options="{'template': 'akara_template_widget_demo.buttons_demo'}"/>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window"
+                id="akara_template_widget_demo.action_window">
+            <field name="name">akara_template_widget_demo window</field>
+            <field name="res_model">akara_template_widget_demo.akara_template_widget_demo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'module' : 'akara_template_widget_demo', 'bin_size': False}</field>
+        </record>
+
+        <menuitem name="akara_template_widget_demo"
+                  web_icon="akara_template_widget_demo,static/description/icon.png"
+                  id="akara_template_widget_demo.menu_root"/>
+
+        <!-- actions -->
+        <menuitem name="List"
+                  id="akara_template_widget_demo.menu_1_list"
+                  parent="akara_template_widget_demo.menu_root"
+                  action="akara_template_widget_demo.action_window"/>
+
+    </data>
+</odoo>
